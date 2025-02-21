@@ -3,16 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Call Me</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            if (window.navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
-                window.location.href = "tel:+918565074473"; // Replace with your actual number
-            }
-        });
-    </script>
+    <title>Contact Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: block;
+            width: 200px;
+            padding: 12px;
+            margin: 10px auto;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .call-btn { background: #28a745; }
+        .whatsapp-btn { background: #25d366; }
+        .email-btn { background: #007bff; }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected, <a href="tel:+918565074473">click here to call</a>.</p>
+    <div class="container">
+        <h2>Contact Me</h2>
+        <a href="tel:+918565074473" class="btn call-btn">📞 Call Me</a>
+        <a href="https://wa.me/918565074473" class="btn whatsapp-btn">💬 WhatsApp Me</a>
+        <a href="mailto:shahgaurav786@gmail.com" class="btn email-btn">📧 Email Me</a>
+    </div>
 </body>
 </html>
