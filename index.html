@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Contact Gaurav</title>
 
@@ -12,6 +17,7 @@
     >
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -20,152 +26,230 @@
 
         body {
             min-height: 100vh;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                         Roboto, Helvetica, Arial, sans-serif;
 
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
 
-            padding: 24px;
+            padding: 25px;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
 
             color: white;
 
             background:
-                radial-gradient(circle at 20% 20%, #6366f1 0%, transparent 35%),
-                radial-gradient(circle at 80% 80%, #06b6d4 0%, transparent 35%),
-                linear-gradient(135deg, #0f172a, #111827, #020617);
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(99, 102, 241, 0.35),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(6, 182, 212, 0.30),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #111827,
+                    #020617
+                );
 
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
-        /* Decorative background circles */
 
-        body::before,
-        body::after {
-            content: "";
+        /* Background decoration */
+
+        .background-circle {
             position: fixed;
+
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.35;
+
+            filter: blur(90px);
+
+            opacity: 0.25;
+
             pointer-events: none;
         }
 
-        body::before {
+        .circle-one {
             width: 300px;
             height: 300px;
-            background: #8b5cf6;
-            top: -100px;
-            left: -100px;
+
+            background: #6366f1;
+
+            top: -120px;
+            left: -120px;
         }
 
-        body::after {
+        .circle-two {
             width: 350px;
             height: 350px;
+
             background: #06b6d4;
+
             bottom: -150px;
-            right: -100px;
+            right: -120px;
         }
+
+
+        /* Main container */
 
         .container {
             width: 100%;
             max-width: 430px;
+
             position: relative;
-            z-index: 1;
+
+            z-index: 2;
         }
 
+
+        /* Card */
+
         .card {
-            padding: 42px 30px 30px;
-
-            background: rgba(255, 255, 255, 0.10);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-
-            border-radius: 28px;
-
-            box-shadow:
-                0 30px 80px rgba(0, 0, 0, 0.35);
+            padding: 40px 28px 28px;
 
             text-align: center;
 
-            animation: appear 0.7s ease;
+            background:
+                rgba(255, 255, 255, 0.09);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.16);
+
+            border-radius: 30px;
+
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.40);
+
+            animation:
+                cardAppear 0.7s ease;
         }
 
-        @keyframes appear {
+
+        @keyframes cardAppear {
+
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(25px) scale(0.97);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
 
-        .avatar {
-            width: 92px;
-            height: 92px;
+
+        /* Profile image */
+
+        .profile-wrapper {
+            width: 120px;
+            height: 120px;
 
             margin: 0 auto 20px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 4px;
 
             border-radius: 50%;
 
-            font-size: 34px;
-            font-weight: 700;
-
             background:
-                linear-gradient(135deg, #6366f1, #06b6d4);
-
-            border: 4px solid rgba(255,255,255,0.25);
+                linear-gradient(
+                    135deg,
+                    #818cf8,
+                    #06b6d4
+                );
 
             box-shadow:
-                0 10px 35px rgba(99, 102, 241, 0.45);
+                0 12px 40px rgba(99, 102, 241, 0.40);
         }
+
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            border-radius: 50%;
+
+            border:
+                3px solid #111827;
+        }
+
+
+        /* Heading */
 
         h1 {
             font-size: 30px;
-            line-height: 1.2;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
+
+            font-weight: 700;
+
+            letter-spacing: -0.6px;
+
+            margin-bottom: 8px;
         }
 
+
         .subtitle {
-            color: rgba(255,255,255,0.70);
+            color:
+                rgba(255, 255, 255, 0.68);
+
             font-size: 15px;
+
             line-height: 1.6;
+
             margin-bottom: 30px;
         }
 
+
+        /* Contact buttons */
+
         .buttons {
             display: flex;
+
             flex-direction: column;
+
             gap: 13px;
         }
 
+
         .button {
             display: flex;
+
             align-items: center;
 
-            padding: 16px 18px;
+            width: 100%;
 
-            border-radius: 16px;
+            padding: 15px 16px;
 
-            text-decoration: none;
             color: white;
 
-            font-size: 16px;
-            font-weight: 600;
+            text-decoration: none;
 
-            border: 1px solid rgba(255,255,255,0.12);
+            background:
+                rgba(255, 255, 255, 0.07);
 
-            background: rgba(255,255,255,0.08);
+            border:
+                1px solid rgba(255, 255, 255, 0.11);
+
+            border-radius: 17px;
 
             transition:
                 transform 0.2s ease,
@@ -173,91 +257,157 @@
                 box-shadow 0.2s ease;
         }
 
+
         .button:hover {
             transform: translateY(-3px);
 
-            background: rgba(255,255,255,0.15);
+            background:
+                rgba(255, 255, 255, 0.14);
 
             box-shadow:
-                0 12px 30px rgba(0,0,0,0.2);
+                0 12px 30px rgba(0, 0, 0, 0.25);
         }
 
+
+        .button:active {
+            transform: scale(0.98);
+        }
+
+
+        /* Icons */
+
         .icon {
-            width: 42px;
-            height: 42px;
+            width: 44px;
+            height: 44px;
+
+            flex-shrink: 0;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
-
-            border-radius: 12px;
 
             margin-right: 14px;
 
             font-size: 20px;
 
-            background: rgba(255,255,255,0.12);
+            border-radius: 13px;
+
+            background:
+                rgba(255, 255, 255, 0.10);
         }
 
+
+        /* Text */
+
         .button-text {
-            text-align: left;
             flex: 1;
+
+            text-align: left;
         }
+
 
         .button-title {
             display: block;
-            margin-bottom: 2px;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            margin-bottom: 3px;
         }
+
 
         .button-description {
             display: block;
 
-            font-size: 12px;
-            font-weight: 400;
+            color:
+                rgba(255, 255, 255, 0.52);
 
-            color: rgba(255,255,255,0.55);
+            font-size: 12px;
+
+            font-weight: 400;
         }
+
 
         .arrow {
-            font-size: 20px;
-            opacity: 0.5;
+            font-size: 23px;
+
+            color:
+                rgba(255, 255, 255, 0.35);
         }
+
+
+        /* Footer */
 
         .footer {
-            margin-top: 25px;
+            margin-top: 26px;
+
+            color:
+                rgba(255, 255, 255, 0.30);
 
             font-size: 12px;
-
-            color: rgba(255,255,255,0.35);
         }
+
+
+        /* Mobile */
 
         @media (max-width: 480px) {
 
             body {
-                padding: 16px;
+                padding: 15px;
             }
 
             .card {
-                padding: 35px 20px 25px;
-                border-radius: 24px;
+                padding: 34px 20px 25px;
+
+                border-radius: 26px;
+            }
+
+            .profile-wrapper {
+                width: 110px;
+                height: 110px;
             }
 
             h1 {
                 font-size: 27px;
             }
+
+            .subtitle {
+                margin-bottom: 25px;
+            }
         }
+
     </style>
 </head>
 
+
 <body>
+
+    <!-- Background decoration -->
+
+    <div class="background-circle circle-one"></div>
+    <div class="background-circle circle-two"></div>
+
 
     <main class="container">
 
-        <div class="card">
+        <section class="card">
 
-            <div class="avatar">
-                GS
+            <!-- Profile photo -->
+
+            <div class="profile-wrapper">
+
+                <img
+                    src="gaurav.jpg"
+                    alt="Gaurav Singh"
+                    class="profile-image"
+                >
+
             </div>
+
+
+            <!-- Introduction -->
 
             <h1>Contact Gaurav</h1>
 
@@ -266,17 +416,25 @@
                 I'd love to hear from you.
             </p>
 
+
+            <!-- Contact options -->
+
             <div class="buttons">
 
-                <!-- CALL -->
+
+                <!-- Phone -->
 
                 <a
                     class="button"
                     href="tel:+918565074473"
                 >
-                    <div class="icon">📞</div>
+
+                    <div class="icon">
+                        📞
+                    </div>
 
                     <div class="button-text">
+
                         <span class="button-title">
                             Call Gaurav
                         </span>
@@ -284,13 +442,17 @@
                         <span class="button-description">
                             Give me a call directly
                         </span>
+
                     </div>
 
-                    <span class="arrow">›</span>
+                    <span class="arrow">
+                        ›
+                    </span>
+
                 </a>
 
 
-                <!-- WHATSAPP -->
+                <!-- WhatsApp -->
 
                 <a
                     class="button"
@@ -298,9 +460,13 @@
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <div class="icon">💬</div>
+
+                    <div class="icon">
+                        💬
+                    </div>
 
                     <div class="button-text">
+
                         <span class="button-title">
                             WhatsApp Gaurav
                         </span>
@@ -308,21 +474,29 @@
                         <span class="button-description">
                             Send me a WhatsApp message
                         </span>
+
                     </div>
 
-                    <span class="arrow">›</span>
+                    <span class="arrow">
+                        ›
+                    </span>
+
                 </a>
 
 
-                <!-- EMAIL -->
+                <!-- Email -->
 
                 <a
                     class="button"
                     href="mailto:shahgaurav786@gmail.com"
                 >
-                    <div class="icon">✉️</div>
+
+                    <div class="icon">
+                        ✉️
+                    </div>
 
                     <div class="button-text">
+
                         <span class="button-title">
                             Email Gaurav
                         </span>
@@ -330,20 +504,27 @@
                         <span class="button-description">
                             shahgaurav786@gmail.com
                         </span>
+
                     </div>
 
-                    <span class="arrow">›</span>
+                    <span class="arrow">
+                        ›
+                    </span>
+
                 </a>
 
+
             </div>
+
 
             <div class="footer">
                 © Gaurav Singh
             </div>
 
-        </div>
+        </section>
 
     </main>
 
 </body>
+
 </html>
